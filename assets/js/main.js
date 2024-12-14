@@ -125,26 +125,30 @@
     }
   });
 
-  // Porfolio isotope and filter
-  $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-    });
+// Porfolio isotope and filter
+$(window).on('load', function() {
+  // Inicializa Isotope
+  var portfolioIsotope = $('.portfolio-container').isotope({
+    itemSelector: '.portfolio-item', // Selecciona los elementos a filtrar
+    layoutMode: 'fitRows' // Modo de diseño
   });
 
-  // Initiate venobox (lightbox feature used in portofilo)
-  $(document).ready(function() {
-    $('.venobox').venobox();
-  });
+  // Manejador de clic para los filtros
+  $('#portfolio-flters li').on('click', function() {
+    // Remueve la clase 'filter-active' de todos los filtros
+    $("#portfolio-flters li").removeClass('filter-active');
+    // Agrega la clase 'filter-active' al filtro clicado
+    $(this).addClass('filter-active');
 
+    // Aplica el filtro seleccionado
+    portfolioIsotope.isotope({
+      filter: $(this).data('filter') // Usa el valor del atributo data-filter
+    });
+  });
+});
+
+// Inicializa VenoBox (lightbox feature)
+$(document).ready(function() {
+  $('.venobox').venobox();
+});
 })(jQuery);
