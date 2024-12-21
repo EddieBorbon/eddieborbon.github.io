@@ -1097,3 +1097,14 @@ section .container {
   }
 }
 
+.portfolio-wrap img {
+  width: 100%; /* Opcional: para que las imágenes ocupen el 100% del contenedor */
+  height: 200px; /* Altura fija */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
