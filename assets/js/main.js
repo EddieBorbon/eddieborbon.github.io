@@ -1,9 +1,3 @@
-/**
-* Template Name: Personal - v2.1.0
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 !(function($) {
   "use strict";
 
@@ -41,6 +35,11 @@
           $('body').removeClass('mobile-nav-active');
           $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
           $('.mobile-nav-overly').fadeOut();
+        }
+
+        // Shuffle projects when the "Projects" tab is clicked
+        if (hash === '#portfolio') {
+          shuffleProjects();
         }
 
         return false;
@@ -125,30 +124,71 @@
     }
   });
 
-// Porfolio isotope and filter
-$(window).on('load', function() {
-  // Inicializa Isotope
-  var portfolioIsotope = $('.portfolio-container').isotope({
-    itemSelector: '.portfolio-item', // Selecciona los elementos a filtrar
-    layoutMode: 'fitRows' // Modo de diseño
-  });
+  // Porfolio isotope and filter
+  $(window).on('load', function() {
+    // Inicializa Isotope
+    var portfolioIsotope = $('.portfolio-container').isotope({
+      itemSelector: '.portfolio-item', // Selecciona los elementos a filtrar
+      layoutMode: 'fitRows' // Modo de diseño
+    });
 
-  // Manejador de clic para los filtros
-  $('#portfolio-flters li').on('click', function() {
-    // Remueve la clase 'filter-active' de todos los filtros
-    $("#portfolio-flters li").removeClass('filter-active');
-    // Agrega la clase 'filter-active' al filtro clicado
-    $(this).addClass('filter-active');
+    // Manejador de clic para los filtros
+    $('#portfolio-flters li').on('click', function() {
+      // Remueve la clase 'filter-active' de todos los filtros
+      $("#portfolio-flters li").removeClass('filter-active');
+      // Agrega la clase 'filter-active' al filtro clicado
+      $(this).addClass('filter-active');
 
-    // Aplica el filtro seleccionado
-    portfolioIsotope.isotope({
-      filter: $(this).data('filter') // Usa el valor del atributo data-filter
+      // Aplica el filtro seleccionado
+      portfolioIsotope.isotope({
+        filter: $(this).data('filter') // Usa el valor del atributo data-filter
+      });
     });
   });
-});
 
-// Inicializa VenoBox (lightbox feature)
-$(document).ready(function() {
-  $('.venobox').venobox();
-});
+  // Inicializa VenoBox (lightbox feature)
+  $(document).ready(function() {
+    $('.venobox').venobox();
+  });
+
+  // Función para reorganizar los proyectos aleatoriamente
+  function shuffleProjects() {
+    // Selecciona el contenedor de los proyectos
+    const portfolioContainer = document.querySelector('.portfolio-container');
+
+    // Verifica si el contenedor existe
+    if (!portfolioContainer) {
+      console.error('No se encontró el contenedor de proyectos con la clase "portfolio-container".');
+      return;
+    }
+
+    // Obtén todos los elementos de los proyectos
+    const portfolioItems = Array.from(portfolioContainer.children);
+
+    // Función para reorganizar aleatoriamente un array
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Intercambia los elementos
+      }
+      return array;
+    }
+
+    // Reorganiza los elementos de los proyectos
+    const shuffledItems = shuffleArray(portfolioItems);
+
+    // Limpia el contenedor
+    portfolioContainer.innerHTML = '';
+
+    // Agrega los elementos reorganizados al contenedor
+    shuffledItems.forEach(item => {
+      portfolioContainer.appendChild(item);
+    });
+  }
+
+  // Llama a la función para reorganizar los proyectos cuando la página cargue
+  $(document).ready(function() {
+    shuffleProjects();
+  });
+
 })(jQuery);
