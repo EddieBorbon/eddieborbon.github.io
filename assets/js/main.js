@@ -1,6 +1,81 @@
 !(function($) {
   "use strict";
 
+  // Arreglo de proyectos
+  const projects = [
+    {
+      title: "NTF Soccer Store Metaverse",
+      image: "./assets/img/project/soccer.png",
+      description: "A metaverse store for soccer enthusiasts, built using Spatial.io.",
+      links: [
+        { type: "web", url: "https://www.spatial.io/s/Metaverse-Futbol-Demo-64bfce7fed5f6cabe428b0ec?share=8533368695620602072" }
+      ],
+      category: "filter-metaverse"
+    },
+    {
+      title: "ArduMetaverse",
+      image: "./assets/img/project/ardumetaverse.png",
+      description: "An interactive learning platform in the metaverse for Arduino.",
+      links: [
+        { type: "web", url: "https://www.spatial.io/s/Metaverse-Arduino-Demo-64c0036948b752b70b8c59a1?share=8032429858933292906" },
+        { type: "github", url: "https://github.com/EddieBorbon/ArduMetaverse" }
+      ],
+      category: "filter-metaverse filter-education filter-videogames"
+    },
+    // Agrega más proyectos aquí...
+  ];
+
+  // Función para mezclar y renderizar proyectos
+  function shuffleProjects() {
+    const portfolioContainer = document.querySelector('.portfolio-container');
+
+    if (!portfolioContainer) {
+      console.error('No se encontró el contenedor de proyectos con la clase "portfolio-container".');
+      return;
+    }
+
+    // Mezcla el arreglo de proyectos
+    const shuffledProjects = shuffleArray(projects);
+
+    // Limpia el contenedor
+    portfolioContainer.innerHTML = '';
+
+    // Renderiza los proyectos mezclados
+    shuffledProjects.forEach(project => {
+      const projectHTML = `
+        <div class="col-lg-6 col-md-6 portfolio-item ${project.category}">
+          <center><h4>${project.title}</h4></center>
+          <div class="portfolio-wrap" style="height: 250px">
+            <img src="${project.image}" class="img-fluid" alt="${project.title}">
+            <div class="portfolio-info">
+              <p>${project.description}</p>
+              <div class="portfolio-links">
+                ${project.links.map(link => `
+                  <a href="${link.url}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Go to Project">
+                    <i class="bx ${link.type === 'web' ? 'bx-world' : 'bxl-github'}"></i>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      portfolioContainer.innerHTML += projectHTML;
+    });
+
+    // Inicializa VenoBox para los nuevos elementos
+    $('.venobox').venobox();
+  }
+
+  // Función para mezclar un arreglo
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
   // Nav Menu
   $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -126,22 +201,17 @@
 
   // Porfolio isotope and filter
   $(window).on('load', function() {
-    // Inicializa Isotope
     var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item', // Selecciona los elementos a filtrar
-      layoutMode: 'fitRows' // Modo de diseño
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows'
     });
 
-    // Manejador de clic para los filtros
     $('#portfolio-flters li').on('click', function() {
-      // Remueve la clase 'filter-active' de todos los filtros
       $("#portfolio-flters li").removeClass('filter-active');
-      // Agrega la clase 'filter-active' al filtro clicado
       $(this).addClass('filter-active');
 
-      // Aplica el filtro seleccionado
       portfolioIsotope.isotope({
-        filter: $(this).data('filter') // Usa el valor del atributo data-filter
+        filter: $(this).data('filter')
       });
     });
   });
@@ -150,41 +220,6 @@
   $(document).ready(function() {
     $('.venobox').venobox();
   });
-
-  // Función para reorganizar los proyectos aleatoriamente
-  function shuffleProjects() {
-    // Selecciona el contenedor de los proyectos
-    const portfolioContainer = document.querySelector('.portfolio-container');
-
-    // Verifica si el contenedor existe
-    if (!portfolioContainer) {
-      console.error('No se encontró el contenedor de proyectos con la clase "portfolio-container".');
-      return;
-    }
-
-    // Obtén todos los elementos de los proyectos
-    const portfolioItems = Array.from(portfolioContainer.children);
-
-    // Función para reorganizar aleatoriamente un array
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Intercambia los elementos
-      }
-      return array;
-    }
-
-    // Reorganiza los elementos de los proyectos
-    const shuffledItems = shuffleArray(portfolioItems);
-
-    // Limpia el contenedor
-    portfolioContainer.innerHTML = '';
-
-    // Agrega los elementos reorganizados al contenedor
-    shuffledItems.forEach(item => {
-      portfolioContainer.appendChild(item);
-    });
-  }
 
   // Llama a la función para reorganizar los proyectos cuando la página cargue
   $(document).ready(function() {
