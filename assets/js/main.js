@@ -1,11 +1,80 @@
-/**
-* Template Name: Personal - v2.1.0
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 !(function($) {
   "use strict";
+
+  // Arreglo de proyectos
+  const projects = [
+    {
+      title: "NTF Soccer Store Metaverse",
+      image: "./assets/img/project/soccer.png",
+      description: "A metaverse store for soccer enthusiasts, built using Spatial.io.",
+      links: [
+        { type: "web", url: "https://www.spatial.io/s/Metaverse-Futbol-Demo-64bfce7fed5f6cabe428b0ec?share=8533368695620602072" }
+      ],
+      category: "filter-metaverse"
+    },
+    {
+      title: "ArduMetaverse",
+      image: "./assets/img/project/ardumetaverse.png",
+      description: "An interactive learning platform in the metaverse for Arduino.",
+      links: [
+        { type: "web", url: "https://www.spatial.io/s/Metaverse-Arduino-Demo-64c0036948b752b70b8c59a1?share=8032429858933292906" },
+        { type: "github", url: "https://github.com/EddieBorbon/ArduMetaverse" }
+      ],
+      category: "filter-metaverse filter-education filter-videogames"
+    },
+    // Agrega más proyectos aquí...
+  ];
+
+  // Función para mezclar y renderizar proyectos
+  function shuffleProjects() {
+    const portfolioContainer = document.querySelector('.portfolio-container');
+
+    if (!portfolioContainer) {
+      console.error('No se encontró el contenedor de proyectos con la clase "portfolio-container".');
+      return;
+    }
+
+    // Mezcla el arreglo de proyectos
+    const shuffledProjects = shuffleArray(projects);
+
+    // Limpia el contenedor
+    portfolioContainer.innerHTML = '';
+
+    // Renderiza los proyectos mezclados
+    shuffledProjects.forEach(project => {
+      const projectHTML = `
+        <div class="col-lg-6 col-md-6 portfolio-item ${project.category}">
+          <center><h4>${project.title}</h4></center>
+          <div class="portfolio-wrap" style="height: 250px">
+            <img src="${project.image}" class="img-fluid" alt="${project.title}">
+            <div class="portfolio-info">
+              <p>${project.description}</p>
+              <div class="portfolio-links">
+                ${project.links.map(link => `
+                  <a href="${link.url}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Go to Project">
+                    <i class="bx ${link.type === 'web' ? 'bx-world' : 'bxl-github'}"></i>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      portfolioContainer.innerHTML += projectHTML;
+    });
+
+    // Inicializa VenoBox para los nuevos elementos
+    $('.venobox').venobox();
+  }
+
+  // Función para mezclar un arreglo
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
   // Nav Menu
   $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
@@ -41,6 +110,11 @@
           $('body').removeClass('mobile-nav-active');
           $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
           $('.mobile-nav-overly').fadeOut();
+        }
+
+        // Shuffle projects when the "Projects" tab is clicked
+        if (hash === '#portfolio') {
+          shuffleProjects();
         }
 
         return false;
@@ -140,12 +214,16 @@
         filter: $(this).data('filter')
       });
     });
-
   });
 
-  // Initiate venobox (lightbox feature used in portofilo)
+  // Inicializa VenoBox (lightbox feature)
   $(document).ready(function() {
     $('.venobox').venobox();
+  });
+
+  // Llama a la función para reorganizar los proyectos cuando la página cargue
+  $(document).ready(function() {
+    shuffleProjects();
   });
 
 })(jQuery);
