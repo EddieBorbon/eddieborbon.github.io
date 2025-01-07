@@ -226,8 +226,121 @@
         live: "https://play.unity.com/en/games/04452778-8b76-4393-9888-7df3c7828ae5/infinity-runner",
         github: "https://github.com/EddieBorbon/Infinity_Runner"
       }
-    }
+    },
+    "Digital Art Portraits": {
+      category: "filter-digitalart",
+      image: "./assets/img/project/coverportraits.png",
+      description: `
+        Welcome to the **Digital Art Portraits** project, an artistic exploration of the fusion between art and artificial intelligence. 
+        This project showcases a collection of unique portraits generated using Stable Diffusion, an advanced AI model. 
+        These portraits feature my fellow artists from the Master’s program in Digital Art at the Federal University of the Far East.
+      `,
+      links: {
+        live: "https://eddieborbon.github.io/Digital_Portraits/",
+        github: "https://github.com/EddieBorbon/Digital_Portraits"
+      }
+    },
+    "Rocket Race: A Musical Learning Game": {
+      category: "filter-videogames filter-education",
+      image: "./assets/img/project/rocketrace.png",
+      description: `
+       Rocket Race is an interactive music game built with Unity 6 where players compete in teams to correctly identify musical chords or instruments based on audio clues. The game helps players learn music by engaging them in quick decision-making while enhancing their musical ear.
+      `,
+      links: {
+        live: "https://play.unity.com/en/games/09fd063e-56a1-44a2-a653-6fa6864b28a4/rocket-race",
+        github: "https://github.com/EddieBorbon/Rocket-Race"
+      }
+    },
+    "Chinese Dance VFX": {
+      category: "filter-videogames filter-digitalart",
+      image: "./assets/img/project/chinesevfx.png",
+      description: `
+In this project, I explored particles and visual effects in Unity to enhance scenes with dynamic effects. I experimented with Unity’s Particle Systems and VFX Graph, learning how to choose and configure these tools to create both environmental and burst effects.      `,
+      links: {
+        live: "https://www.youtube.com/watch?v=DVIDNGGZlKQ",
+        github: "https://github.com/EddieBorbon/CreativeCore_VFX_2022.3LTS"
+      }
+    },
+    "Choropleth Map": {
+      category: "filter-webapp",
+      image: "./assets/img/project/choroplethmap.png",
+      description: `
+This project is a Choropleth Map that visualizes the educational attainment across the United States. It displays the percentage of the population aged 25 and older with a bachelor's degree or higher (2010-2014) by county. The map is interactive, allowing users to hover over counties to see detailed information.
+`,
+      links: {
+        live: "https://eddieborbon.github.io/Choropleth-Map/",
+        github: "https://github.com/EddieBorbon/Choropleth-Map"
+      }
+    },
 
+    "Heat Map": {
+      category: "filter-webapp",
+      image: "./assets/img/project/heatmap.png",
+      description: `
+This project is an interactive heat map visualizing global land-surface temperature from 1753 to 2015. Using the D3.js library, it provides a stunning visual representation of data, featuring a modern and futuristic design with neon colors and tech-inspired typography.
+`,
+      links: {
+        live: "https://eddieborbon.github.io/Heat-Map/",
+        github: "https://github.com/EddieBorbon/Heat-Map"
+      }
+    },
+
+    "Scatterplot Graph": {
+      category: "filter-webapp",
+      image: "./assets/img/project/scatterplot.png",
+      description: `
+This project is an interactive scatterplot visualization of the 35 Fastest Times Up Alpe d'Huez in professional bicycle racing, with a focus on doping allegations. Built using D3.js, the chart provides a modern and futuristic design with advanced features like zooming, filtering, and dynamic tooltips.`,
+      links: {
+        live: "https://eddieborbon.github.io/Scatterplot-Graph/",
+        github: "https://github.com/EddieBorbon/Scatterplot-Graph"
+      }
+    },
+
+    "Bar Chart": {
+      category: "filter-webapp",
+      image: "./assets/img/project/barchart.png",
+      description: `
+This project is an interactive visualization of the United States Gross Domestic Product (GDP) from 1947 to 2015. It uses the D3.js library to create a bar chart that displays the data in a clear and engaging way. The design is modern and futuristic, with visual effects that enhance the user experience.
+`,
+      links: {
+        live: "https://eddieborbon.github.io/Visualize-Data-with-a-Bar-Chart/",
+        github: "https://github.com/EddieBorbon/Visualize-Data-with-a-Bar-Chart"
+      }
+    },
+
+    "Gesture Music Control": {
+      category: "filter-digitalart",
+      image: "./assets/img/project/gesturemusiccontrol.png",
+      description: `
+Gesture Music Control explores the intersection of gesture and music through digital musical instruments. By leveraging machine learning, particularly neural networks, this project aims to translate hand gestures into musical control parameters for a granular synthesizer programmed in Pure Data. This research-creation project embraces open-source and DIY methodologies to foster collaborative, experimental learning.`,
+      links: {
+        live: "https://www.youtube.com/watch?v=437lGx45HqU&t=171s",
+        github: "https://github.com/EddieBorbon/Gesture_Music_Control?tab=readme-ov-file"
+      }
+    },
+
+    "3D Cell Viewer": {
+      category: "filter-education",
+      image: "./assets/img/project/3dcell.png",
+      description: `
+3D Cell Viewer is an educational Unity project designed to help students visualize and explore different types of cells—animal, plant, bacterial, and fungal—along with their organelles in an immersive 3D environment. This interactive tool enhances learning by providing a detailed, hands-on experience with cell structures, making biology concepts easier to understand.
+`,
+      links: {
+        live: "https://play.unity.com/en/games/11b0c0d0-e18f-42c1-b18d-065448c6cbc6/celulas-edusteam",
+        github: "https://github.com/EddieBorbon/CellsUnity"
+      }
+    },
+
+    "Animation Unity": {
+      category: "filter-digitalart filter-videogames",
+      image: "./assets/img/project/animation.png",
+      description: `
+The world around us is constantly in motion 🌍, and the same goes for digital worlds. Static environments can feel unfinished and lifeless, but animation brings everything to life ✨! This project is the culmination of my journey learning 3D animation in Unity, where I explored both native animations and imported animations from external software.`,
+      links: {
+        live: "https://www.youtube.com/watch?v=KtsYnBxnk08",
+        github: "https://github.com/EddieBorbon/CreativeCore_Animation"
+      }
+    },
   };
 
   // Función para mezclar un array (Fisher-Yates shuffle)
@@ -242,7 +355,7 @@
   // Función para generar el HTML de los proyectos
   function generateProjectHTML(project, title) {
     return `
-      <div class="col-lg-6 col-md-6 portfolio-item ${project.category}">
+        <div div class= "col-lg-6 col-md-6 portfolio-item ${project.category}" >
         <center>
           <h4>${title}</h4>
         </center>
@@ -256,7 +369,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div >
     `;
   }
 
