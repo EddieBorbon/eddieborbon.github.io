@@ -344,7 +344,7 @@ The world around us is constantly in motion 🌍, and the same goes for digital 
 
     "Roguelike 2D Game": {
       category: "filter-videogames",
-      image: "./assets/img/project/roguelike.png",
+      image: "./assets/img/project/roguelike.jpg",
       description: `
 This is an exciting 2D Roguelike game developed in Unity, where you will explore procedurally generated dungeons, face challenging enemies, and collect items to improve your character.       
 `,       
