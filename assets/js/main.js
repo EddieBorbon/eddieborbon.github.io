@@ -341,6 +341,18 @@ The world around us is constantly in motion 🌍, and the same goes for digital 
         github: "https://github.com/EddieBorbon/CreativeCore_Animation"
       }
     },
+
+    "Roguelike 2D Game": {
+      category: "filter-videogames",
+      image: "./assets/img/project/roguelike.png",
+      description: `
+This is an exciting 2D Roguelike game developed in Unity, where you will explore procedurally generated dungeons, face challenging enemies, and collect items to improve your character.       
+`,       
+links: { 
+live: "https://play.unity.com/en/games/b8a01595-416e-46c4-93e4-d15a973ab108/roguelike",
+        github: "https://github.com/EddieBorbon/Roguelike_Game"
+      }
+    },
   };
 
   // Función para mezclar un array (Fisher-Yates shuffle)
