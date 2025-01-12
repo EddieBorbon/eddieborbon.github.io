@@ -353,6 +353,24 @@ live: "https://play.unity.com/en/games/b8a01595-416e-46c4-93e4-d15a973ab108/rogu
         github: "https://github.com/EddieBorbon/Roguelike_Game"
       }
     },
+      "Cops and Robbers": {
+        category: "game",
+        image: "./assets/img/project/covercoprobbers.png",
+        description: "A Unity-based game demonstrating autonomous agents using Unity's NavMesh system. Features AI-controlled Cops and Robbers with behaviors like hiding, pursuing, and evading.",
+        links: {
+          live: "https://play.unity.com/en/games/039f0071-3a3b-42eb-801d-4e284cbf0c56/cops-and-robbers",
+          github: "https://github.com/EddieBorbon/Cops-and-Robbers"
+        }
+      },
+      "Finite State Machine (FSM) Demo Project": {
+        category: "game",
+        image: "./assets/img/project/coverfinite.jpg",
+        description: "A Unity project showcasing a Finite State Machine (FSM) implementation for AI-controlled NPCs. NPCs transition between states like Idle, Patrol, Pursue, Attack, and RunAway based on player interactions.",
+        links: {
+          live: "https://play.unity.com/en/games/4c7cb585-2bee-4d34-8cd3-f988d4963bec/finite-state-machine-demo",
+          github: "https://github.com/EddieBorbon/FiniteStateMachine_Guard"
+        }
+      }
   };
 
   // Función para mezclar un array (Fisher-Yates shuffle)
