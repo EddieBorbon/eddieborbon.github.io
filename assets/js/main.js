@@ -354,7 +354,7 @@ live: "https://play.unity.com/en/games/b8a01595-416e-46c4-93e4-d15a973ab108/rogu
       }
     },
       "Cops and Robbers": {
-        category: "game",
+        category: "filter-videogames",
         image: "./assets/img/project/covercoprobbers.png",
         description: "A Unity-based game demonstrating autonomous agents using Unity's NavMesh system. Features AI-controlled Cops and Robbers with behaviors like hiding, pursuing, and evading.",
         links: {
@@ -363,7 +363,7 @@ live: "https://play.unity.com/en/games/b8a01595-416e-46c4-93e4-d15a973ab108/rogu
         }
       },
       "Finite State Machine (FSM) Demo Project": {
-        category: "game",
+        category: "filter-videogames",
         image: "./assets/img/project/coverfinite.jpg",
         description: "A Unity project showcasing a Finite State Machine (FSM) implementation for AI-controlled NPCs. NPCs transition between states like Idle, Patrol, Pursue, Attack, and RunAway based on player interactions.",
         links: {
