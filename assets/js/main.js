@@ -223,7 +223,7 @@
       image: "./assets/img/project/infinity.png",
       description: "This is a fast-paced side-scrolling game where the player controls a character that jumps over oncoming obstacles to avoid crashing. 🚶‍♂️💨 The game includes dynamic background scrolling, animations, sound effects, and particle effects to enhance the gaming experience. 🎶💥",
       links: {
-        live: "https://play.unity.com/en/games/04452778-8b76-4393-9888-7df3c7828ae5/infinity-runner",
+        live: "https://play.unity.com/en/games/cdc2323f-91c1-446f-8767-9644641903ce/infinity-runner",
         github: "https://github.com/EddieBorbon/Infinity_Runner"
       }
     },
@@ -369,6 +369,15 @@ live: "https://play.unity.com/en/games/b8a01595-416e-46c4-93e4-d15a973ab108/rogu
         links: {
           live: "https://play.unity.com/en/games/4c7cb585-2bee-4d34-8cd3-f988d4963bec/finite-state-machine-demo",
           github: "https://github.com/EddieBorbon/FiniteStateMachine_Guard"
+        }
+      },
+      "Stampede of Animals": {
+        category: "filter-videogames",
+        image: "./assets/img/project/coverfinite.jpg",
+        description: "The game involves feeding animals that appear on the screen while preventing them from reaching the end of the play area. The player can move horizontally and throw food to feed the animals.",
+        links: {
+          live: "https://play.unity.com/en/games/45b03fd2-f8ef-4898-b1c6-b28c777088e7/stampede-of-animals",
+          github: "https://github.com/EddieBorbon/Animals-Food"
         }
       }
   };
