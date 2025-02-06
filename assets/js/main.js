@@ -373,7 +373,7 @@ live: "https://play.unity.com/en/games/b8a01595-416e-46c4-93e4-d15a973ab108/rogu
       },
       "Stampede of Animals": {
         category: "filter-videogames",
-        image: "./assets/img/project/coverfinite.jpg",
+        image: "./assets/img/project/coveranimals.jpg",
         description: "The game involves feeding animals that appear on the screen while preventing them from reaching the end of the play area. The player can move horizontally and throw food to feed the animals.",
         links: {
           live: "https://play.unity.com/en/games/45b03fd2-f8ef-4898-b1c6-b28c777088e7/stampede-of-animals",
